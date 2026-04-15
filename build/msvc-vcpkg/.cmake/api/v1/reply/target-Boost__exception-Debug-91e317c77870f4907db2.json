@@ -1,0 +1,365 @@
+{
+	"abstract" : true,
+	"backtrace" : 43,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_add_library",
+			"add_library",
+			"include",
+			"_find_package",
+			"find_package",
+			"__find_dependency_common",
+			"find_dependency",
+			"boostcfg_find_component",
+			"find_boost",
+			"find_external_library",
+			"set_target_properties"
+		],
+		"files" : 
+		[
+			"C:/Users/Gakbulu/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_exception/boost_exception-targets.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_exception/boost_exception-config.cmake",
+			"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_algorithm/boost_algorithm-config.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_date_time/boost_date_time-config.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_thread/boost_thread-config.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_spirit/boost_spirit-config.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost_serialization/boost_serialization-config.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost/BoostConfig.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/boost/vcpkg-cmake-wrapper.cmake",
+			"C:/Users/Gakbulu/vcpkg/installed/x64-windows/share/pcl/PCLConfig.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 12,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 1
+			},
+			{
+				"file" : 11,
+				"parent" : 2
+			},
+			{
+				"command" : 9,
+				"file" : 11,
+				"line" : 584,
+				"parent" : 3
+			},
+			{
+				"command" : 8,
+				"file" : 11,
+				"line" : 304,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 11,
+				"line" : 128,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 862,
+				"parent" : 6
+			},
+			{
+				"file" : 10,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 10,
+				"line" : 3,
+				"parent" : 8
+			},
+			{
+				"file" : 9,
+				"parent" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 128,
+				"parent" : 10
+			},
+			{
+				"command" : 4,
+				"file" : 9,
+				"line" : 67,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 12
+			},
+			{
+				"file" : 8,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 8,
+				"line" : 52,
+				"parent" : 14
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 125,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 93,
+				"parent" : 16
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 17
+			},
+			{
+				"file" : 7,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 73,
+				"parent" : 19
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 125,
+				"parent" : 20
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 93,
+				"parent" : 21
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 22
+			},
+			{
+				"file" : 6,
+				"parent" : 23
+			},
+			{
+				"command" : 6,
+				"file" : 6,
+				"line" : 37,
+				"parent" : 24
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 125,
+				"parent" : 25
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 93,
+				"parent" : 26
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 27
+			},
+			{
+				"file" : 5,
+				"parent" : 28
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 10,
+				"parent" : 29
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 125,
+				"parent" : 30
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 93,
+				"parent" : 31
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 32
+			},
+			{
+				"file" : 4,
+				"parent" : 33
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 28,
+				"parent" : 34
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 125,
+				"parent" : 35
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 93,
+				"parent" : 36
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 908,
+				"parent" : 37
+			},
+			{
+				"file" : 2,
+				"parent" : 38
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 31,
+				"parent" : 39
+			},
+			{
+				"file" : 1,
+				"parent" : 40
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 58,
+				"parent" : 41
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 653,
+				"parent" : 42
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 60,
+				"parent" : 41
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "Boost::exception::@6890427a1f51a3e7e1df",
+	"imported" : true,
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 44,
+			"id" : "Boost::assert::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::config::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::smart_ptr::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::throw_exception::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::tuple::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::type_traits::@6890427a1f51a3e7e1df"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 44,
+			"id" : "Boost::assert::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::config::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::smart_ptr::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::throw_exception::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::tuple::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "Boost::type_traits::@6890427a1f51a3e7e1df"
+		}
+	],
+	"local" : true,
+	"name" : "Boost::exception",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}
