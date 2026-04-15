@@ -103,7 +103,7 @@ When it succeeds, you should see:
 
 ## Source Files
 
-- [MyCppCode.cpp](VoxelGridFilter.cpp): main example implementation.
+- [VoxelGridFilter.cpp](VoxelGridFilter.cpp): main example implementation.
 - [CMakeLists.txt](CMakeLists.txt): target definition and library linkage.
 - [CMakePresets.json](CMakePresets.json): preset-based build configuration.
 
