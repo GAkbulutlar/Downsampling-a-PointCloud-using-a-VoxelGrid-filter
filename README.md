@@ -11,7 +11,28 @@ The program:
 
 ## What the Project Does
 
-The executable defined in [CMakeLists.txt](CMakeLists.txt) is built from [VoxelGridFilter.cpp](VoxelGridFilter.cpp).
+The executable defined in [CMakeLists.txt](CMakeLists.txt) is built from a small multi-file layout:
+
+```text
+project/
+├── include/
+│   ├── PointCloudProcessor.h
+│   └── Visualizer.h
+├── src/
+│   ├── main.cpp
+│   ├── PointCloudProcessor.cpp
+│   └── Visualizer.cpp
+├── CMakeLists.txt
+├── vcpkg.json
+├── README.md
+└── .gitignore
+```
+
+Responsibilities are split as follows:
+
+- `PointCloudProcessor` loads, downsamples, and saves the `.pcd` data.
+- `Visualizer` displays the original and filtered point clouds side by side.
+- `main.cpp` wires the workflow together.
 
 At runtime, the code performs these steps:
 
@@ -46,19 +67,13 @@ This workspace is configured as a CMake project using:
 - the `Ninja` generator,
 - the `msvc-vcpkg` configure preset,
 - Microsoft C++ compiler (`cl.exe`),
-- dependencies installed through `vcpkg`.
+- dependencies installed through `vcpkg` using the manifest in [vcpkg.json](vcpkg.json).
 
 The preset is defined in [CMakePresets.json](CMakePresets.json) and writes build output to:
 
 - `build/msvc-vcpkg`
 
-The project links against these libraries:
-
-- `fmt`
-- `pcl_common`
-- `pcl_io`
-- `pcl_filters`
-- `pcl_visualization`
+The project links against PCL components for common utilities, I/O, filtering, and visualization.
 
 ## Important Runtime Requirement
 
@@ -103,7 +118,11 @@ When it succeeds, you should see:
 
 ## Source Files
 
-- [VoxelGridFilter.cpp](VoxelGridFilter.cpp): main example implementation.
+- [src/main.cpp](src/main.cpp): entry point and application flow.
+- [src/PointCloudProcessor.cpp](src/PointCloudProcessor.cpp): point cloud loading, filtering, and saving.
+- [src/Visualizer.cpp](src/Visualizer.cpp): side-by-side PCL visualization.
+- [include/PointCloudProcessor.h](include/PointCloudProcessor.h): processing interface.
+- [include/Visualizer.h](include/Visualizer.h): visualization interface.
 - [CMakeLists.txt](CMakeLists.txt): target definition and library linkage.
 - [CMakePresets.json](CMakePresets.json): preset-based build configuration.
 

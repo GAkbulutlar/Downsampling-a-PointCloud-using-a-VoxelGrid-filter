@@ -1,0 +1,13 @@
+build/
+.vs/
+.vscode/
+CMakeUserPresets.json
+compile_commands.json
+
+*.exe
+*.ilk
+*.obj
+*.pdb
+*.lib
+
+*_downsampled.pcd

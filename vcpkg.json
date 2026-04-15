@@ -1,0 +1,12 @@
+{
+  "name": "downsampling-a-pointcloud-using-a-voxelgrid-filter",
+  "version-string": "0.1.0",
+  "dependencies": [
+    {
+      "name": "pcl",
+      "features": [
+        "visualization"
+      ]
+    }
+  ]
+}
