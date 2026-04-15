@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/Gakbulu/cmake/build/msvc-vcpkg/cmake_install.cmake"
+		"C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter/build/msvc-vcpkg/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

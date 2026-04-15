@@ -1,5 +1,7 @@
 # ninja log v7
-16	6511	7979336053135761	CMakeFiles/MyCppCode.dir/MyCppCode.cpp.obj	58caf3d25d6681d7
-6547	28991	7979336118448246	MyCppCode.exe	1d1a46119d229e14
-15	6190	7979348920594917	CMakeFiles/MyCppCode.dir/VoxelGridFilter.cpp.obj	f37541684c82fd8c
-6228	23801	7979348982720429	MyCppCode.exe	72b3eb21fd0b0f73
+18	1747	7979707145099616	CMakeFiles/MyCppCode.dir/src/main.cpp.obj	ba05cf7335a4ccd7
+110	5238	7979707146012110	CMakeFiles/MyCppCode.dir/src/PointCloudProcessor.cpp.obj	2204df5f101a4dba
+59	2494	7979786825262944	CMakeFiles/MyCppCode.dir/src/main.cpp.obj	b91e6402cfe4f55b
+154	5363	7979786826214873	CMakeFiles/MyCppCode.dir/src/PointCloudProcessor.cpp.obj	b0773112eb78c864
+243	6275	7979786827102956	CMakeFiles/MyCppCode.dir/src/Visualizer.cpp.obj	edd1914c0712a669
+6287	31455	7979786887547150	MyCppCode.exe	9c6a5d933a4328c

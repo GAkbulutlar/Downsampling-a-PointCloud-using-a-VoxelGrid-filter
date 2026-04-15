@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/Gakbulu/cmake
-BuildDirectory: C:/Users/Gakbulu/cmake/build/msvc-vcpkg
+SourceDirectory: C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter
+BuildDirectory: C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter/build/msvc-vcpkg
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Users/Gakbulu/cmake"
+ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter"
 MakeCommand: "C:\Program Files\CMake\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -45,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: 
+GITCommand: C:/Users/Gakbulu/AppData/Local/Programs/Git/cmd/git.exe
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,9 +58,9 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: 
+UpdateCommand: C:/Users/Gakbulu/AppData/Local/Programs/Git/cmd/git.exe
 UpdateOptions: 
-UpdateType: 
+UpdateType: git
 
 # Compiler info
 Compiler: C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe

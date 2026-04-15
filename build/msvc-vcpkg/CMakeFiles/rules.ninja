@@ -49,7 +49,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\Gakbulu\cmake -BC:\Users\Gakbulu\cmake\build\msvc-vcpkg
+  command = "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\Gakbulu\FilterVoxelgrid\Downsampling-a-PointCloud-using-a-VoxelGrid-filter -BC:\Users\Gakbulu\FilterVoxelgrid\Downsampling-a-PointCloud-using-a-VoxelGrid-filter\build\msvc-vcpkg
   description = Re-running CMake...
   generator = 1
 

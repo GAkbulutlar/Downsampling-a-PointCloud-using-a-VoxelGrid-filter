@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Gakbulu/cmake
+# Install script for directory: C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,7 +35,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/Gakbulu/cmake/build/msvc-vcpkg/install_local_manifest.txt"
+  file(WRITE "C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter/build/msvc-vcpkg/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -51,6 +51,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/Gakbulu/cmake/build/msvc-vcpkg/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/Gakbulu/FilterVoxelgrid/Downsampling-a-PointCloud-using-a-VoxelGrid-filter/build/msvc-vcpkg/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
