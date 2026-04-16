@@ -100,6 +100,14 @@ cmake --preset msvc-vcpkg
 cmake --build --preset msvc-vcpkg
 ```
 
+
+- Install vcpkg
+- Set `VCPKG_ROOT` environment variable, e.g.
+
+![alt text](image-1.png)
+
+Otherwise, CMake will not find dependencies.
+
 If you are building through VS Code with CMake Tools, use the same preset and build the `MyCppCode` target.
 
 ## How to Run
