@@ -34,7 +34,8 @@ PointCloudProcessor::PointCloudProcessor(float leaf_size_x,
       input_cloud_(new pcl::PCLPointCloud2()),
       filtered_cloud_(new pcl::PCLPointCloud2()),
       normal_xyz_copy_(new pcl::PointCloud<pcl::PointXYZ>()),
-      normals_cloud_(new pcl::PointCloud<pcl::Normal>())
+    knn_normals_cloud_(new pcl::PointCloud<pcl::Normal>()),
+    radius_normals_cloud_(new pcl::PointCloud<pcl::Normal>())
 {
 }
 
@@ -54,11 +55,16 @@ void PointCloudProcessor::printInputSummary() const
     printCloudSummary(*input_cloud_, "PointCloud before filtering");
 }
 
-void PointCloudProcessor::estimateNormals(int k_search)
+void PointCloudProcessor::refreshNormalInputFromFiltered()
 {
-    // Deep-copy the downsampled cloud into a dedicated XYZ cloud for normal estimation
+    // Deep-copy the filtered cloud into a dedicated XYZ cloud for normal estimation.
     normal_xyz_copy_ = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>());
     pcl::fromPCLPointCloud2(*filtered_cloud_, *normal_xyz_copy_);
+}
+
+void PointCloudProcessor::estimateNormalsKnn(int k_search)
+{
+    refreshNormalInputFromFiltered();
 
     pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
     ne.setInputCloud(normal_xyz_copy_);
@@ -69,10 +75,29 @@ void PointCloudProcessor::estimateNormals(int k_search)
         k_search = 20;
     }
     ne.setKSearch(k_search);
-    ne.compute(*normals_cloud_);
+    ne.compute(*knn_normals_cloud_);
 
-    std::cerr << "Normal estimation: " << normals_cloud_->size()
+    std::cerr << "Normal estimation (kNN): " << knn_normals_cloud_->size()
               << " normals computed on downsampled cloud (k=" << k_search << ")\n";
+}
+
+void PointCloudProcessor::estimateNormalsRadius(float radius_search)
+{
+    refreshNormalInputFromFiltered();
+
+    pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
+    ne.setInputCloud(normal_xyz_copy_);
+
+    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
+    ne.setSearchMethod(tree);
+    if (radius_search <= 0.0f) {
+        radius_search = 0.03f;
+    }
+    ne.setRadiusSearch(radius_search);
+    ne.compute(*radius_normals_cloud_);
+
+    std::cerr << "Normal estimation (radius): " << radius_normals_cloud_->size()
+              << " normals computed on downsampled cloud (r=" << radius_search << ")\n";
 }
 
 void PointCloudProcessor::downsample()
@@ -129,9 +154,14 @@ const pcl::PointCloud<pcl::PointXYZ>& PointCloudProcessor::normalXyzCopy() const
     return *normal_xyz_copy_;
 }
 
-const pcl::PointCloud<pcl::Normal>& PointCloudProcessor::normals() const
+const pcl::PointCloud<pcl::Normal>& PointCloudProcessor::knnNormals() const
 {
-    return *normals_cloud_;
+    return *knn_normals_cloud_;
+}
+
+const pcl::PointCloud<pcl::Normal>& PointCloudProcessor::radiusNormals() const
+{
+    return *radius_normals_cloud_;
 }
 
 const pcl::PCLPointCloud2& PointCloudProcessor::filteredCloud() const

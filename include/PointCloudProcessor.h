@@ -14,7 +14,8 @@ public:
 
     bool loadPointCloud(const std::string& input_file);
     void printInputSummary() const;
-    void estimateNormals(int k_search = 20);
+    void estimateNormalsKnn(int k_search = 20);
+    void estimateNormalsRadius(float radius_search = 0.03f);
     void downsample();
     void applyTransform(float theta_z, float tx, float ty, float tz);
     void printFilteredSummary() const;
@@ -23,14 +24,18 @@ public:
     const pcl::PCLPointCloud2& inputCloud() const;
     const pcl::PCLPointCloud2& filteredCloud() const;
     const pcl::PointCloud<pcl::PointXYZ>& normalXyzCopy() const;
-    const pcl::PointCloud<pcl::Normal>& normals() const;
+    const pcl::PointCloud<pcl::Normal>& knnNormals() const;
+    const pcl::PointCloud<pcl::Normal>& radiusNormals() const;
 
 private:
+    void refreshNormalInputFromFiltered();
+
     float leaf_size_x_;
     float leaf_size_y_;
     float leaf_size_z_;
     pcl::PCLPointCloud2::Ptr input_cloud_;
     pcl::PCLPointCloud2::Ptr filtered_cloud_;
     pcl::PointCloud<pcl::PointXYZ>::Ptr normal_xyz_copy_;
-    pcl::PointCloud<pcl::Normal>::Ptr normals_cloud_;
+    pcl::PointCloud<pcl::Normal>::Ptr knn_normals_cloud_;
+    pcl::PointCloud<pcl::Normal>::Ptr radius_normals_cloud_;
 };

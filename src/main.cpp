@@ -8,6 +8,7 @@ namespace {
 constexpr char kInputFile[] = "table_scene_lms400.pcd";
 constexpr char kOutputFile[] = "table_scene_lms400_downsampled.pcd";
 constexpr int kNormalKSearch = 20;
+constexpr float kNormalRadiusSearch = 0.03f;
 
 // Transformation parameters
 constexpr float kRotationZ  = M_PI / 4.0f;  // 45 degrees around Z axis
@@ -26,18 +27,23 @@ int main()
 
     processor.printInputSummary();
     processor.downsample();
-    processor.estimateNormals(kNormalKSearch);
-    processor.applyTransform(kRotationZ, kTranslateX, kTranslateY, kTranslateZ);
     processor.printFilteredSummary();
 
     if (!processor.saveFilteredPointCloud(kOutputFile)) {
         return -1;
     }
 
+    processor.estimateNormalsKnn(kNormalKSearch);
+    processor.estimateNormalsRadius(kNormalRadiusSearch);
+
+    const pcl::PCLPointCloud2 downsampled_cloud = processor.filteredCloud();
+    processor.applyTransform(kRotationZ, kTranslateX, kTranslateY, kTranslateZ);
+
     Visualizer visualizer;
-    visualizer.showComparison(processor.inputCloud(), processor.filteredCloud(),
-                              processor.normalXyzCopy(), processor.normals(),
-                              kNormalKSearch);
+    visualizer.showComparison(processor.inputCloud(), downsampled_cloud,
+                              processor.filteredCloud(), processor.normalXyzCopy(),
+                              processor.knnNormals(), kNormalKSearch,
+                              processor.radiusNormals(), kNormalRadiusSearch);
 
     return 0;
 }
