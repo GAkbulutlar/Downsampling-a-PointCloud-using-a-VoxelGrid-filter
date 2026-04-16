@@ -71,6 +71,32 @@ This gives you a smaller cloud that is usually:
 
 The tradeoff is detail: smaller leaf sizes preserve more geometry, while larger leaf sizes produce stronger compression.
 
+## Why Normal Estimation Is Useful
+
+Normal estimation gives each point a local surface direction, which is a key geometric cue for many 3D tasks.
+
+With reliable normals, you can improve:
+
+- segmentation quality (separating planes, edges, and object boundaries),
+- feature extraction and matching,
+- registration and alignment robustness,
+- surface reconstruction and meshing,
+- visualization and inspection of local shape changes.
+
+In this project, comparing kNN-based and radius-based normal estimation helps show how neighborhood choice affects normal stability, smoothness, and sensitivity to local point density.
+
+## Experimental Work in This Repository
+
+This repository includes experimental work in addition to the base voxel downsampling example.
+
+Current experimental topics include:
+
+- comparing original, downsampled, and transformed point clouds,
+- evaluating normal estimation behavior with different neighborhood strategies (kNN vs radius),
+- iterating on visualization outputs and parameter settings for analysis.
+
+These experiments are intended for learning and exploration, so interfaces, parameters, and outputs may evolve over time.
+
 ## Build Configuration in This Workspace
 
 This workspace is configured as a CMake project using:
